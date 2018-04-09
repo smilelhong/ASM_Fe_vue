@@ -26,77 +26,41 @@ export const constantRouterMap = [
   { path: '/404', component: () => import('@/views/404'), hidden: true },
 
   {
-    path: '',
+    path: '/',
     component: Layout,
-    redirect: 'dashboard',
+    redirect: '/dashboard',
+    name: 'Dashboard',
+    hidden: true,
     children: [{
       path: 'dashboard',
-      component: () => import('@/views/dashboard/index'),
-      name: 'dashboard',
-      meta: { title: '首页', icon: 'dashboard' }
+      component: () => import('@/views/dashboard/index')
     }]
   },
 
   {
-    path: '/zuoxi',
+    path: '/example',
     component: Layout,
-    redirect: '/zuoxi/system_view',
-    name: 'zuoxi',
-    meta: { title: '坐席系统', icon: 'example' },
+    redirect: '/example/table',
+    name: 'Example',
+    meta: { title: 'Example', icon: 'example' },
     children: [
       {
-        path: 'system_view',
-        name: '系统视图',
-        component: () => import('@/views/zuoxi/system_view'),
-        meta: { title: '系统视图', icon: 'table' }
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: 'Table', icon: 'table' }
       },
       {
-        path: 'business_view',
-        name: '业务视图',
-        component: () => import('@/views/zuoxi/business_view'),
-        meta: { title: '业务视图', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/bofen',
-    component: Layout,
-    redirect: '/bofen/system_view',
-    name: 'bofen',
-    meta: { title: '波分系统', icon: 'example' },
-    children: [
-      {
-        path: 'system_view',
-        name: '系统视图',
-        component: () => import('@/views/bofen/system_view'),
-        meta: { title: '系统视图', icon: 'table' }
-      },
-      {
-        path: 'business_view',
-        name: '业务视图',
-        component: () => import('@/views/bofen/business_view'),
-        meta: { title: '业务视图', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/daiwai',
-    component: Layout,
-    children: [
-      {
-        path: 'daiwai',
-        name: 'daiwai',
-        component: () => import('@/views/daiwai/index'),
-        meta: { title: '带外管理系统', icon: 'form' }
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: 'Tree', icon: 'tree' }
       }
     ]
   },
 
   {
     path: '/form',
-    hidden: 'true',
     component: Layout,
     children: [
       {
