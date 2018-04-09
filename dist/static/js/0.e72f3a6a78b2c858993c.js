@@ -1,1 +1,0 @@
-webpackJsonp([0],{OVQD:function(t,e,r){"use strict";e.a=function(t){return Object(a.a)({url:"/test",method:"get",params:t})},e.b=function(t){return Object(a.a)({url:"/test1",method:"get",params:t})},e.c=function(t){return Object(a.a)({url:"/test2",method:"get",params:t})};var a=r("vLgD")}});
